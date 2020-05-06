@@ -1,0 +1,6 @@
+sudo cp -v -r -f   *    /ashweb
+if sudo docker ps | grep myweb1
+then
+echo "Already Running"
+else
+sudo docker run -d -i -t -p 8081:80 -v /ashweb:/usr/local/apache2/htdocs/ --name myweb1 httpd:2.4
