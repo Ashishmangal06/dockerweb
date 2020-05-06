@@ -1,0 +1,5 @@
+if sudo docker ps | grep myweb
+then
+sudo docker rm -f myweb
+else
+sudo docker run -d -i -t -p 8080:80 -v /ashweb:/usr/local/apache2/htdocs/ --name myweb httpd:2.4
